@@ -40,5 +40,22 @@ class Stack02Test {
         st.pop();
         assertTrue(st.isEmpty());
     }
+    @Test
+    void peek(){
+        Stack02 st = new Stack02();
+        assertThrows(EmptyStackException.class,()->{
+            st.peek();
+        });
+        st.push(10);
+        int peeked = st.peek();
+        assertEquals(10,peeked);
+    }
+
+    void realStack(){
+        Stack<Integer> st = new Stack();
+        assertThrows(EmptyStackException.class,()->{
+        });
+
+}
 
 }
