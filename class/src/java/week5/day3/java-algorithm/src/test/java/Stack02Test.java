@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Stack02Test {
@@ -23,7 +26,19 @@ class Stack02Test {
 
         assertEquals(20,st.pop());
         assertEquals(10,st.pop());
-
+        //Exception의 검증
+        assertThrows(EmptyStackException.class,() -> {
+            st.pop();
+        });
+    }
+    @Test
+    void isEmpty(){
+        Stack02 st = new Stack02();
+        assertTrue(st.isEmpty());
+        st.push(10);
+        assertFalse(st.isEmpty());
+        st.pop();
+        assertTrue(st.isEmpty());
     }
 
 }

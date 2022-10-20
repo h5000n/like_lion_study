@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class Stack02 {
     private Integer[] arr;
     private int top = 0;
@@ -12,6 +14,10 @@ public class Stack02 {
         this.top++;
     }
     public int pop(){
+        if(this.isEmpty()){
+            throw new EmptyStackException();
+//            throw new RuntimeException("Stack is empty");
+        }
         int value = this.arr[top-1];
         this.top--;
         return value;
@@ -19,5 +25,10 @@ public class Stack02 {
 
     public Integer[] getArr() {
         return arr;
+    }
+
+    public boolean isEmpty() {
+       boolean isEmpty = this.top == 0;
+       return isEmpty;
     }
 }
