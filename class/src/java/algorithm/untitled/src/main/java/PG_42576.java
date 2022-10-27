@@ -9,4 +9,4 @@ class Solution {
         this.size = size;
         this.table = new int[size];
     }
-}
+}//
